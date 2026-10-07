@@ -1,84 +1,109 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Эвакуатор 24/7 — Быстро, Недорого, Круглосуточно</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-        body { background: #0d0d0d; color: #e0e0e0; line-height: 1.6; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background: #0a0a0a; color: #e0e0e0; line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
 
         /* Шапка */
-        header { background: #000; color: #fff; padding: 15px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 15px rgba(255,0,0,0.3); border-bottom: 2px solid #cc0000; }
+        header { background: rgba(0,0,0,0.95); backdrop-filter: blur(10px); color: #fff; padding: 18px 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,0,0,0.3); }
         .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 24px; font-weight: bold; color: #ff3333; }
+        .logo { font-size: 26px; font-weight: 800; color: #ff1a1a; letter-spacing: 1px; }
+        .logo span { color: #fff; }
         .header-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-        .btn-small { padding: 8px 16px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 14px; transition: 0.3s; color: #fff; }
+        .btn-small { padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; color: #fff; border: 1px solid transparent; }
         .btn-call { background: #cc0000; }
-        .btn-call:hover { background: #ff1a1a; }
-        .btn-wa { background: #128C7E; }
-        .btn-wa:hover { background: #25D366; }
-        .btn-tg { background: #0088cc; }
-        .btn-tg:hover { background: #00aaff; }
-        .btn-max { background: #6e00ff; }
-        .btn-max:hover { background: #8a2be2; }
+        .btn-call:hover { background: #ff1a1a; box-shadow: 0 0 20px rgba(255,0,0,0.6); }
+        .btn-wa { background: rgba(37, 211, 102, 0.15); border-color: #25D366; color: #25D366; }
+        .btn-wa:hover { background: #25D366; color: #fff; }
+        .btn-tg { background: rgba(0, 136, 204, 0.15); border-color: #0088cc; color: #0088cc; }
+        .btn-tg:hover { background: #0088cc; color: #fff; }
+        .btn-max { background: rgba(110, 0, 255, 0.15); border-color: #8a2be2; color: #b388ff; }
+        .btn-max:hover { background: #6e00ff; color: #fff; }
 
         /* Баннер */
-        .hero { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover; color: #fff; padding: 100px 0; text-align: center; border-bottom: 3px solid #cc0000; }
-        .hero h1 { font-size: 48px; margin-bottom: 20px; color: #fff; text-shadow: 0 0 20px rgba(255,0,0,0.5); }
-        .hero p { font-size: 20px; margin-bottom: 30px; color: #bbb; }
-        .btn { display: inline-block; background: #cc0000; color: #fff; padding: 18px 50px; font-size: 22px; font-weight: bold; text-decoration: none; border-radius: 50px; transition: 0.3s; border: none; cursor: pointer; box-shadow: 0 0 20px rgba(255,0,0,0.4); }
-        .btn:hover { background: #ff1a1a; transform: scale(1.05); box-shadow: 0 0 30px rgba(255,0,0,0.8); }
+        .hero { position: relative; min-height: 600px; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(20,0,0,0.95)), url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover; border-bottom: 1px solid rgba(255,0,0,0.3); }
+        .hero h1 { font-size: 56px; margin-bottom: 20px; color: #fff; font-weight: 800; line-height: 1.1; }
+        .hero h1 span { color: #ff1a1a; }
+        .hero p { font-size: 22px; margin-bottom: 40px; color: #bbb; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .btn { display: inline-block; background: #cc0000; color: #fff; padding: 20px 55px; font-size: 20px; font-weight: 700; text-decoration: none; border-radius: 60px; transition: all 0.3s; border: none; cursor: pointer; box-shadow: 0 10px 40px rgba(204,0,0,0.5); letter-spacing: 0.5px; }
+        .btn:hover { background: #ff1a1a; transform: translateY(-3px); box-shadow: 0 15px 50px rgba(255,0,0,0.8); }
 
-        /* Услуги */
-        .services { padding: 60px 0; background: #111; }
-        .services h2 { text-align: center; font-size: 36px; margin-bottom: 40px; color: #ff3333; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .service-card { background: #1a1a1a; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(255,0,0,0.1); transition: 0.3s; border: 1px solid #330000; }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 5px 25px rgba(255,0,0,0.3); border-color: #cc0000; }
-        .service-card h3 { color: #ff3333; margin-bottom: 10px; }
-        .service-card p { color: #999; }
+        /* Заголовки секций */
+        .section-title { text-align: center; font-size: 42px; margin-bottom: 15px; color: #fff; font-weight: 800; }
+        .section-subtitle { text-align: center; font-size: 18px; color: #888; margin-bottom: 50px; }
+        .section-title span { color: #ff1a1a; }
+
+        /* ФОТО-ГАЛЕРЕЯ */
+        .gallery { padding: 80px 0; background: #0a0a0a; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .gallery-item { position: relative; border-radius: 20px; overflow: hidden; height: 250px; border: 1px solid rgba(255,0,0,0.2); transition: all 0.4s; }
+        .gallery-item:hover { border-color: #ff1a1a; transform: scale(1.02); box-shadow: 0 10px 40px rgba(255,0,0,0.4); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }/* Услуги */
+        .services { padding: 80px 0; background: #111; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .service-card { background: linear-gradient(145deg, #1a1a1a, #0f0f0f); padding: 40px 30px; border-radius: 20px; text-align: center; transition: all 0.4s; border: 1px solid rgba(255,0,0,0.15); }
+        .service-card:hover { transform: translateY(-8px); border-color: #ff1a1a; box-shadow: 0 15px 40px rgba(255,0,0,0.3); }
+        .service-card h3 { color: #fff; margin-bottom: 12px; font-size: 20px; }
+        .service-card p { color: #888; font-size: 15px; }
+
+        /* ЦЕНЫ */
+        .prices { padding: 80px 0; background: #0a0a0a; }
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .price-card { background: linear-gradient(145deg, #1a1a1a, #0f0f0f); border: 1px solid rgba(255,0,0,0.2); border-radius: 20px; padding: 40px 30px; text-align: center; transition: all 0.4s; position: relative; overflow: hidden; }
+        .price-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #cc0000, #ff1a1a); }
+        .price-card:hover { border-color: #ff1a1a; transform: translateY(-8px); box-shadow: 0 15px 40px rgba(255,0,0,0.3); }
+        .price-card h3 { color: #fff; font-size: 22px; margin-bottom: 20px; }
+        .price-card .price { font-size: 48px; font-weight: 800; color: #ff1a1a; margin-bottom: 15px; }
+        .price-card .price small { font-size: 18px; color: #666; font-weight: 400; }
+        .price-card p { color: #888; font-size: 15px; }
 
         /* Преимущества */
-        .advantages { background: #000; color: #fff; padding: 60px 0; border-top: 2px solid #cc0000; border-bottom: 2px solid #cc0000; }
-        .advantages h2 { text-align: center; font-size: 36px; margin-bottom: 40px; color: #ff3333; }
-        .adv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
-        .adv-item h3 { font-size: 32px; color: #ff3333; margin-bottom: 10px; }
+        .advantages { padding: 80px 0; background: #111; }
+        .adv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; text-align: center; }
+        .adv-item { background: linear-gradient(145deg, #1a1a1a, #0f0f0f); padding: 40px 20px; border-radius: 20px; border: 1px solid rgba(255,0,0,0.15); transition: all 0.4s; }
+        .adv-item:hover { border-color: #ff1a1a; transform: translateY(-5px); }
+        .adv-item h3 { font-size: 36px; color: #ff1a1a; margin-bottom: 10px; font-weight: 800; }
         .adv-item p { color: #888; }
 
         /* Контакты */
-        .contacts { padding: 60px 0; background: #111; text-align: center; }
-        .contacts h2 { font-size: 36px; margin-bottom: 30px; color: #ff3333; }
-        .contacts p { font-size: 18px; margin-bottom: 10px; color: #ccc; }
-        .contacts .big-phone { font-size: 36px; font-weight: bold; color: #fff; text-decoration: none; display: block; margin: 20px 0; }
-        .contacts .big-phone:hover { color: #ff3333; }.contact-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 30px; }
-        .btn-contact { padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; color: #fff; transition: 0.3s; font-size: 16px; }
-        .btn-wa-big { background: #128C7E; }
-        .btn-wa-big:hover { background: #25D366; transform: scale(1.05); }
+        .contacts { padding: 80px 0; background: #0a0a0a; text-align: center; }
+        .contacts .big-phone { font-size: 44px; font-weight: 800; color: #fff; text-decoration: none; display: block; margin: 25px 0; transition: color 0.3s; }
+        .contacts .big-phone:hover { color: #ff1a1a; }
+        .contacts p { color: #888; font-size: 18px; }
+        .contact-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 40px; }
+        .btn-contact { padding: 18px 40px; border-radius: 60px; text-decoration: none; font-weight: 700; color: #fff; transition: all 0.3s; font-size: 16px; }
+        .btn-wa-big { background: #25D366; }
+        .btn-wa-big:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(37,211,102,0.5); }
         .btn-tg-big { background: #0088cc; }
-        .btn-tg-big:hover { background: #00aaff; transform: scale(1.05); }
+        .btn-tg-big:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,136,204,0.5); }
         .btn-max-big { background: #6e00ff; }
-        .btn-max-big:hover { background: #8a2be2; transform: scale(1.05); }
+        .btn-max-big:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(110,0,255,0.5); }
 
         /* Подвал */
-        footer { background: #000; color: #555; text-align: center; padding: 20px 0; font-size: 14px; border-top: 2px solid #cc0000; }
+        footer { background: #000; color: #555; text-align: center; padding: 30px 0; font-size: 14px; border-top: 1px solid rgba(255,0,0,0.2); }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 28px; }
+            .hero h1 { font-size: 32px; }
             .hero p { font-size: 16px; }
-            .header-flex { flex-direction: column; gap: 10px; }
-            .btn { font-size: 18px; padding: 15px 30px; }
-            .contacts .big-phone { font-size: 26px; }
+            .header-flex { flex-direction: column; gap: 15px; }
+            .section-title { font-size: 28px; }
+            .contacts .big-phone { font-size: 28px; }
+            .btn { font-size: 18px; padding: 16px 35px; }
+            .gallery-item { height: 200px; }
         }
     </style>
 </head>
-<body>
-
-    <!-- Шапка -->
+<body><!-- Шапка -->
     <header>
         <div class="container header-flex">
-            <div class="logo">🚛 ЭВАКУАТОР 24/7</div>
+            <div class="logo">🚛 ЭВАКУАТОР <span>24/7</span></div>
             <div class="header-buttons">
                 <a href="tel:+79252984448" class="btn-small btn-call">📞 Позвонить</a>
                 <a href="https://wa.me/79252984448" class="btn-small btn-wa" target="_blank">💬 WhatsApp</a>
@@ -91,16 +116,31 @@
     <!-- Баннер -->
     <section class="hero">
         <div class="container">
-            <h1>Эвакуатор круглосуточно</h1>
-            <p>Быстро приедем, аккуратно погрузим, недорого отвезём.</p>
+            <h1>Эвакуатор <span>круглосуточно</span></h1>
+            <p>Быстро приедем, аккуратно погрузим, недорого отвезём. Работаем по городу и области.</p>
             <a href="#contacts" class="btn">🚛 ЗАКАЗАТЬ ЭВАКУАТОР</a>
+        </div>
+    </section>
+
+    <!-- ФОТО-ГАЛЕРЕЯ -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Наша <span>работа</span></h2>
+            <p class="section-subtitle">Реальные фото с вызовов</p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="Эвакуатор"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" alt="Погрузка авто"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Ночная работа"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=800&q=80" alt="Эвакуация внедорожника"></div>
+            </div>
         </div>
     </section>
 
     <!-- Услуги -->
     <section class="services">
         <div class="container">
-            <h2>Наши услуги</h2>
+            <h2 class="section-title">Наши <span>услуги</span></h2>
+            <p class="section-subtitle">Работаем с любым транспортом</p>
             <div class="services-grid">
                 <div class="service-card"><h3>🚗 Легковые авто</h3><p>Аккуратная погрузка и крепление.</p></div>
                 <div class="service-card"><h3>🏍️ Мототехника</h3><p>Специальные крепления для мото.</p></div>
@@ -112,10 +152,34 @@
         </div>
     </section>
 
-    <!-- Преимущества -->
-    <section class="advantages">
+    <!-- ЦЕНЫ -->
+    <section class="prices">
         <div class="container">
-            <h2>Почему выбирают нас</h2>
+            <h2 class="section-title">Наши <span>цены</span></h2>
+            <p class="section-subtitle">Честные цены без скрытых доплат</p>
+            <div class="price-grid">
+                <div class="price-card">
+                    <h3>🚗 Легковое авто</h3>
+                    <div class="price">от 70 ₽<small>/км</small></div>
+                    <p>Погрузка и крепление включены</p>
+                </div>
+                <div class="price-card">
+                    <h3>🚙 Внедорожник</h3>
+                    <div class="price">от 90 ₽<small>/км</small></div>
+                    <p>Для тяжёлых и полноприводных авто</p>
+                </div>
+                <div class="price-card">
+                    <h3>🏍️ Мототехника</h3>
+                    <div class="price">от 70 ₽<small>/км</small></div>
+                    <p>Специальные крепления для мото</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества --><section class="advantages">
+        <div class="container">
+            <h2 class="section-title">Почему <span>выбирают нас</span></h2>
             <div class="adv-grid">
                 <div class="adv-item"><h3>24/7</h3><p>Круглосуточно, без выходных</p></div>
                 <div class="adv-item"><h3>15 мин</h3><p>Среднее время подачи</p></div>
@@ -128,12 +192,13 @@
     <!-- Контакты -->
     <section class="contacts" id="contacts">
         <div class="container">
-            <h2>Заказать эвакуатор</h2>
+            <h2 class="section-title">Заказать <span>эвакуатор</span></h2>
             <p>Звоните или пишите в мессенджер — ответим сразу</p>
             <a href="tel:+79252984448" class="big-phone">+7 925 298 44 48</a>
             <p>📍 Работаем по городу и области</p>
             <div class="contact-buttons">
-                <a href="https://wa.me/79252984448" class="btn-contact btn-wa-big" target="_blank">💬 WhatsApp</a><a href="https://t.me/username" class="btn-contact btn-tg-big" target="_blank">✈️ Telegram</a>
+                <a href="https://wa.me/79252984448" class="btn-contact btn-wa-big" target="_blank">💬 WhatsApp</a>
+                <a href="https://t.me/username" class="btn-contact btn-tg-big" target="_blank">✈️ Telegram</a>
                 <a href="https://max.ru/username" class="btn-contact btn-max-big" target="_blank">🟣 Max</a>
             </div>
         </div>
