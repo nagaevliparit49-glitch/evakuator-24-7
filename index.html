@@ -18,7 +18,7 @@
         .header-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
 
         /* Кнопки в шапке */
-        .btn-small { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; color: #fff; border: 1px solid transparent; backdrop-filter: blur(5px); }
+        .btn-small { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; color: #fff; border: 1px solid transparent; }
         .btn-small svg { width: 16px; height: 16px; fill: currentColor; }
         .btn-call { background: linear-gradient(135deg, #cc0000, #ff1a1a); box-shadow: 0 4px 15px rgba(204,0,0,0.4); }
         .btn-call:hover { background: linear-gradient(135deg, #ff1a1a, #ff3333); box-shadow: 0 6px 25px rgba(255,0,0,0.7); transform: translateY(-2px); }
@@ -30,12 +30,22 @@
         .btn-max:hover { background: #6e00ff; color: #fff; box-shadow: 0 6px 25px rgba(110,0,255,0.5); transform: translateY(-2px); }
 
         /* Баннер */
-        .hero { position: relative; min-height: 600px; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(20,0,0,0.95)), url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover; border-bottom: 1px solid rgba(255,0,0,0.3); }
-        .hero h1 { font-size: 56px; margin-bottom: 20px; color: #fff; font-weight: 800; line-height: 1.1; }
+        .hero { position: relative; min-height: 620px; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(20,0,0,0.9)), url('images/1.jpg') no-repeat center center/cover; border-bottom: 1px solid rgba(255,0,0,0.3); }
+        .hero h1 { font-size: 56px; margin-bottom: 20px; color: #fff; font-weight: 800; line-height: 1.1; text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
         .hero h1 span { color: #ff1a1a; }
-        .hero p { font-size: 22px; margin-bottom: 40px; color: #bbb; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .btn { display: inline-block; background: linear-gradient(135deg, #cc0000, #ff1a1a); color: #fff; padding: 20px 55px; font-size: 20px; font-weight: 700; text-decoration: none; border-radius: 60px; transition: all 0.3s; border: none; cursor: pointer; box-shadow: 0 10px 40px rgba(204,0,0,0.5); letter-spacing: 0.5px; }
-        .btn:hover { background: linear-gradient(135deg, #ff1a1a, #ff3333); transform: translateY(-3px); box-shadow: 0 15px 50px rgba(255,0,0,0.8); }
+        .hero p { font-size: 22px; margin-bottom: 40px; color: #ddd; max-width: 650px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+
+        /* СОВРЕМЕННАЯ КНОПКА ЗАКАЗАТЬ */
+        .btn-modern { position: relative; display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #cc0000, #ff1a1a); color: #fff; padding: 22px 50px; font-size: 20px; font-weight: 700; text-decoration: none; border-radius: 60px; transition: all 0.3s; box-shadow: 0 10px 40px rgba(204,0,0,0.6), inset 0 0 20px rgba(255,255,255,0.1); letter-spacing: 0.5px; overflow: hidden; border: 2px solid rgba(255,255,255,0.15); }
+        .btn-modern::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.6s; }
+        .btn-modern:hover::before { left: 100%; }
+        .btn-modern:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 18px 60px rgba(255,0,0,0.9), inset 0 0 30px rgba(255,255,255,0.2); }.btn-modern svg { width: 26px; height: 26px; fill: currentColor; }
+
+        /* ДЕКОРАТИВНАЯ ПОЛОСКА С МАШИНКАМИ */
+        .divider-strip { background: linear-gradient(90deg, #000, #1a0000, #000); padding: 18px 0; overflow: hidden; border-top: 1px solid rgba(255,0,0,0.3); border-bottom: 1px solid rgba(255,0,0,0.3); position: relative; }
+        .divider-strip-inner { display: flex; gap: 60px; animation: scrollStrip 25s linear infinite; white-space: nowrap; }
+        .divider-strip span { font-size: 32px; opacity: 0.85; filter: drop-shadow(0 0 8px rgba(255,0,0,0.6)); }
+        @keyframes scrollStrip { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         /* Заголовки секций */
         .section-title { text-align: center; font-size: 42px; margin-bottom: 15px; color: #fff; font-weight: 800; }
@@ -43,7 +53,8 @@
         .section-title span { color: #ff1a1a; }
 
         /* ФОТО-ГАЛЕРЕЯ */
-        .gallery { padding: 80px 0; background: #0a0a0a; }.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .gallery { padding: 80px 0; background: #0a0a0a; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .gallery-item { position: relative; border-radius: 20px; overflow: hidden; height: 250px; border: 1px solid rgba(255,0,0,0.2); transition: all 0.4s; }
         .gallery-item:hover { border-color: #ff1a1a; transform: scale(1.02); box-shadow: 0 10px 40px rgba(255,0,0,0.4); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
@@ -73,8 +84,7 @@
         .advantages { padding: 80px 0; background: #111; }
         .adv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; text-align: center; }
         .adv-item { background: linear-gradient(145deg, #1a1a1a, #0f0f0f); padding: 40px 20px; border-radius: 20px; border: 1px solid rgba(255,0,0,0.15); transition: all 0.4s; }
-        .adv-item:hover { border-color: #ff1a1a; transform: translateY(-5px); }
-        .adv-item h3 { font-size: 36px; color: #ff1a1a; margin-bottom: 10px; font-weight: 800; }
+        .adv-item:hover { border-color: #ff1a1a; transform: translateY(-5px); }.adv-item h3 { font-size: 36px; color: #ff1a1a; margin-bottom: 10px; font-weight: 800; }
         .adv-item p { color: #888; }
 
         /* Контакты */
@@ -87,7 +97,8 @@
         /* Большие кнопки контактов */
         .btn-contact { display: inline-flex; align-items: center; gap: 12px; padding: 18px 35px; border-radius: 60px; text-decoration: none; font-weight: 700; color: #fff; transition: all 0.3s; font-size: 16px; border: 1px solid transparent; }
         .btn-contact svg { width: 22px; height: 22px; fill: currentColor; }
-        .btn-wa-big { background: linear-gradient(135deg, #128C7E, #25D366); box-shadow: 0 8px 25px rgba(37,211,102,0.3); }.btn-wa-big:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(37,211,102,0.6); }
+        .btn-wa-big { background: linear-gradient(135deg, #128C7E, #25D366); box-shadow: 0 8px 25px rgba(37,211,102,0.3); }
+        .btn-wa-big:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(37,211,102,0.6); }
         .btn-tg-big { background: linear-gradient(135deg, #0077b5, #29a1e2); box-shadow: 0 8px 25px rgba(41,161,226,0.3); }
         .btn-tg-big:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(41,161,226,0.6); }
         .btn-max-big { background: linear-gradient(135deg, #4b00b3, #8a2be2); box-shadow: 0 8px 25px rgba(110,0,255,0.3); }
@@ -102,7 +113,7 @@
             .header-flex { flex-direction: column; gap: 15px; }
             .section-title { font-size: 28px; }
             .contacts .big-phone { font-size: 28px; }
-            .btn { font-size: 18px; padding: 16px 35px; }
+            .btn-modern { font-size: 16px; padding: 16px 32px; }
             .gallery-item { height: 200px; }
             .btn-contact { padding: 15px 25px; font-size: 14px; }
             .btn-small { padding: 8px 14px; font-size: 13px; }
@@ -121,28 +132,40 @@
                     Позвонить
                 </a>
                 <a href="https://wa.me/79252984448" class="btn-small btn-wa" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.8936.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                     WhatsApp
                 </a>
                 <a href="https://t.me/NagaevHovanes" class="btn-small btn-tg" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Telegram
+                    <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    Telegram
                 </a>
                 <a href="https://max.ru/79252984448" class="btn-small btn-max" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M4 4h4l4 6 4-6h4v16h-3V9l-5 7-5-7v11H4V4z"/></svg>
                     Max
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Баннер -->
+    <!-- Баннер с фото красного эвакуатора -->
     <section class="hero">
         <div class="container">
             <h1>Эвакуатор <span>круглосуточно</span></h1>
             <p>Быстро приедем, аккуратно погрузим, недорого отвезём. Работаем по городу и области.</p>
-            <a href="#contacts" class="btn">🚛 ЗАКАЗАТЬ ЭВАКУАТОР</a>
+            <a href="#contacts" class="btn-modern">
+                <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                ЗАКАЗАТЬ ЭВАКУАТОР
+            </a>
         </div>
     </section>
+
+    <!-- ДЕКОРАТИВНАЯ ПОЛОСКА С МАШИНКАМИ -->
+    <div class="divider-strip">
+        <div class="divider-strip-inner">
+            <span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span><span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span>
+            <span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span><span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span>
+        </div>
+    </div>
 
     <!-- ФОТО-ГАЛЕРЕЯ -->
     <section class="gallery">
@@ -150,16 +173,23 @@
             <h2 class="section-title">Наша <span>работа</span></h2>
             <p class="section-subtitle">Реальные фото с вызовов</p>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="Эвакуатор"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" alt="Погрузка авто"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Ночная работа"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=800&q=80" alt="Эвакуация внедорожника"></div>
+                <div class="gallery-item"><img src="images/1.jpg" alt="Эвакуатор с погрузчиком"></div>
+                <div class="gallery-item"><img src="images/2.jpg" alt="Перевозка мини-погрузчика"></div>
+                <div class="gallery-item"><img src="images/3.jpg" alt="Эвакуация авто"></div>
+                <div class="gallery-item"><img src="images/4.jpg" alt="Ночная эвакуация"></div>
             </div>
         </div>
     </section>
 
-    <!-- Услуги -->
-    <section class="services">
+    <!-- ДЕКОРАТИВНАЯ ПОЛОСКА -->
+    <div class="divider-strip">
+        <div class="divider-strip-inner">
+            <span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span><span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span>
+            <span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span><span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span>
+        </div>
+    </div>
+
+    <!-- Услуги --><section class="services">
         <div class="container">
             <h2 class="section-title">Наши <span>услуги</span></h2>
             <p class="section-subtitle">Работаем с любым транспортом</p>
@@ -173,6 +203,14 @@
             </div>
         </div>
     </section>
+
+    <!-- ДЕКОРАТИВНАЯ ПОЛОСКА -->
+    <div class="divider-strip">
+        <div class="divider-strip-inner">
+            <span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span><span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span>
+            <span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span><span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span>
+        </div>
+    </div>
 
     <!-- ЦЕНЫ -->
     <section class="prices">
@@ -199,17 +237,33 @@
         </div>
     </section>
 
+    <!-- ДЕКОРАТИВНАЯ ПОЛОСКА -->
+    <div class="divider-strip">
+        <div class="divider-strip-inner">
+            <span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span><span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span>
+            <span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span><span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span>
+        </div>
+    </div>
+
     <!-- Преимущества -->
     <section class="advantages">
         <div class="container">
             <h2 class="section-title">Почему <span>выбирают нас</span></h2>
-            <div class="adv-grid"><div class="adv-item"><h3>24/7</h3><p>Круглосуточно, без выходных</p></div>
+            <div class="adv-grid">
+                <div class="adv-item"><h3>24/7</h3><p>Круглосуточно, без выходных</p></div>
                 <div class="adv-item"><h3>15 мин</h3><p>Среднее время подачи</p></div>
                 <div class="adv-item"><h3>100%</h3><p>Сохранность вашего авто</p></div>
                 <div class="adv-item"><h3>₽</h3><p>Честные цены без доплат</p></div>
             </div>
         </div>
     </section>
+
+    <!-- ДЕКОРАТИВНАЯ ПОЛОСКА -->
+    <div class="divider-strip">
+        <div class="divider-strip-inner">
+            <span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span><span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span><span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span><span>🚛</span><span>🚗</span><span>🚙</span><span>🏍️</span><span>🚐</span><span>🚚</span>
+        </div>
+    </div>
 
     <!-- Контакты -->
     <section class="contacts" id="contacts">
@@ -228,7 +282,7 @@
                     Telegram
                 </a>
                 <a href="https://max.ru/79252984448" class="btn-contact btn-max-big" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M4 4h4l4 6 4-6h4v16h-3V9l-5 7-5-7v11H4V4z"/></svg>
                     Max
                 </a>
             </div>
@@ -244,4 +298,3 @@
 
 </body>
 </html>
-    
