@@ -26,7 +26,7 @@
         .btn-max { background: rgba(110, 0, 255, 0.15); border-color: #8a2be2; color: #b388ff; }
         .btn-max:hover { background: #6e00ff; color: #fff; box-shadow: 0 6px 25px rgba(110,0,255,0.5); transform: translateY(-2px); }
 
-        .hero { position: relative; min-height: 620px; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(20,0,0,0.9)), url('images/1.jpg') no-repeat center center/cover; border-bottom: 1px solid rgba(255,0,0,0.3); }
+        .hero { position: relative; min-height: 620px; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(20,0,0,0.8)), url('images/1.jpg') no-repeat center center/cover; background-color: #000; border-bottom: 1px solid rgba(255,0,0,0.3); }
         .hero h1 { font-size: 56px; margin-bottom: 20px; color: #fff; font-weight: 800; line-height: 1.1; text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
         .hero h1 span { color: #ff1a1a; }
         .hero p { font-size: 22px; margin-bottom: 40px; color: #ddd; max-width: 650px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
@@ -44,13 +44,13 @@
         .section-subtitle { text-align: center; font-size: 18px; color: #888; margin-bottom: 50px; }
         .section-title span { color: #ff1a1a; }
 
+        /* ГАЛЕРЕЯ — ФОТО ВИДНО ЦЕЛИКОМ */
         .gallery { padding: 80px 0; background: #0a0a0a; }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .gallery-item { position: relative; border-radius: 20px; overflow: hidden; height: 250px; border: 1px solid rgba(255,0,0,0.2); transition: all 0.4s; }
+        .gallery-item { position: relative; border-radius: 20px; overflow: hidden; height: 280px; border: 1px solid rgba(255,0,0,0.2); transition: all 0.4s; background: #000; }
         .gallery-item:hover { border-color: #ff1a1a; transform: scale(1.02); box-shadow: 0 10px 40px rgba(255,0,0,0.4); }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: contain; padding: 8px; transition: transform 0.5s; }
+        .gallery-item:hover img { transform: scale(1.05); }
 
         .services { padding: 80px 0; background: #111; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
@@ -76,8 +76,8 @@
         .adv-item h3 { font-size: 36px; color: #ff1a1a; margin-bottom: 10px; font-weight: 800; }
         .adv-item p { color: #888; }
 
-        .contacts { padding: 80px 0; background: #0a0a0a; text-align: center; }.contacts .big-phone { font-size: 44px; font-weight: 800; color: #fff; text-decoration: none; display: block; margin: 25px 0; transition: color 0.3s; }
-        .contacts .big-phone:hover { color: #ff1a1a; }
+        .contacts { padding: 80px 0; background: #0a0a0a; text-align: center; }
+        .contacts .big-phone { font-size: 44px; font-weight: 800; color: #fff; text-decoration: none; display: block; margin: 25px 0; transition: color 0.3s; }.contacts .big-phone:hover { color: #ff1a1a; }
         .contacts p { color: #888; font-size: 18px; }
         .contact-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 40px; }
 
@@ -99,7 +99,7 @@
             .section-title { font-size: 28px; }
             .contacts .big-phone { font-size: 28px; }
             .btn-modern { font-size: 16px; padding: 18px 35px; }
-            .gallery-item { height: 200px; }
+            .gallery-item { height: 220px; }
             .btn-contact { padding: 15px 25px; font-size: 14px; }
             .btn-small { padding: 8px 14px; font-size: 13px; }
         }
@@ -118,8 +118,8 @@
                 <a href="https://wa.me/79252984448" class="btn-small btn-wa" target="_blank">
                     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                     WhatsApp
-                </a><a href="https://t.me/NagaevHovanes" class="btn-small btn-tg" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </a>
+                <a href="https://t.me/NagaevHovanes" class="btn-small btn-tg" target="_blank"><svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
                     Telegram
                 </a>
                 <a href="https://max.ru/79252984448" class="btn-small btn-max" target="_blank">
@@ -148,17 +148,16 @@
         </div>
     </div>
 
-    <!-- ГАЛЕРЕЯ С 7 ФОТО -->
     <section class="gallery">
         <div class="container">
             <h2 class="section-title">Наша <span>работа</span></h2>
             <p class="section-subtitle">Реальные фото с вызовов</p>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="images/1.jpg" alt="Эвакуатор с погрузчиком"></div>
-                <div class="gallery-item"><img src="images/2.jpg" alt="Перевозка мини-погрузчика"></div>
-                <div class="gallery-item"><img src="images/3.jpg" alt="Эвакуация авто"></div>
-                <div class="gallery-item"><img src="images/4.jpg" alt="Ночная эвакуация"></div>
-                <div class="gallery-item"><img src="images/5.jpg" alt="Эвакуация внедорожника"></div>
+                <div class="gallery-item"><img src="images/1.jpg" alt="Эвакуатор"></div>
+                <div class="gallery-item"><img src="images/2.jpg" alt="Погрузка"></div>
+                <div class="gallery-item"><img src="images/3.jpg" alt="Эвакуация"></div>
+                <div class="gallery-item"><img src="images/4.jpg" alt="Ночная работа"></div>
+                <div class="gallery-item"><img src="images/5.jpg" alt="Внедорожник"></div>
                 <div class="gallery-item"><img src="images/6.jpg" alt="Эвакуация у дома"></div>
                 <div class="gallery-item"><img src="images/7.jpg" alt="Эвакуация машины"></div>
             </div>
@@ -174,10 +173,10 @@
 
     <section class="services">
         <div class="container">
-            <h2 class="section-title">Наши <span>услуги</span></h2><p class="section-subtitle">Работаем с любым транспортом</p>
+            <h2 class="section-title">Наши <span>услуги</span></h2>
+            <p class="section-subtitle">Работаем с любым транспортом</p>
             <div class="services-grid">
-                <div class="service-card"><h3>🚗 Легковые авто</h3><p>Аккуратная погрузка и крепление.</p></div>
-                <div class="service-card"><h3>🏍️ Мототехника</h3><p>Специальные крепления для мото.</p></div>
+                <div class="service-card"><h3>🚗 Легковые авто</h3><p>Аккуратная погрузка и крепление.</p></div><div class="service-card"><h3>🏍️ Мототехника</h3><p>Специальные крепления для мото.</p></div>
                 <div class="service-card"><h3>🚙 Внедорожники</h3><p>Справимся с любым весом.</p></div>
                 <div class="service-card"><h3>🏗️ Спецтехника</h3><p>Подберём подходящий эвакуатор.</p></div>
                 <div class="service-card"><h3>🛣️ Межгород</h3><p>Работаем по области и дальше.</p></div>
@@ -244,11 +243,11 @@
     </div>
 
     <section class="contacts" id="contacts">
-        <div class="container"><h2 class="section-title">Заказать <span>эвакуатор</span></h2>
+        <div class="container">
+            <h2 class="section-title">Заказать <span>эвакуатор</span></h2>
             <p>Звоните или пишите в мессенджер — ответим сразу</p>
             <a href="tel:+79252984448" class="big-phone">+7 925 298 44 48</a>
-            <p>📍 Работаем по городу и области</p>
-            <div class="contact-buttons">
+            <p>📍 Работаем по городу и области</p><div class="contact-buttons">
                 <a href="https://wa.me/79252984448" class="btn-contact btn-wa-big" target="_blank">
                     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                     WhatsApp
